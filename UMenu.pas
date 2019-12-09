@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ComCtrls;
+  Dialogs, Buttons, ComCtrls, MidasLib;
 
 type
   TFrmMenu = class(TForm)

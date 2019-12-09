@@ -29,12 +29,17 @@ object FrmRelatorioPonto: TFrmRelatorioPonto
     ParentFont = False
   end
   object btnPesquisar: TSpeedButton
-    Left = 184
-    Top = 7
-    Width = 73
+    Left = 171
+    Top = 5
+    Width = 86
     Height = 22
     Cursor = crHandPoint
-    Caption = '&Listar'
+    Caption = '&Consultar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -49,13 +54,14 @@ object FrmRelatorioPonto: TFrmRelatorioPonto
       0FF077FF3337773F7F37EE0BFB0BFB0F0F03777FF3733F737F73EEE0BFBF00FF
       00337777FFFF77FF7733EEEE0000000003337777777777777333}
     NumGlyphs = 2
+    ParentFont = False
     OnClick = btnPesquisarClick
   end
   object mskReferencia: TMaskEdit
     Left = 85
     Top = 7
     Width = 72
-    Height = 22
+    Height = 21
     EditMask = '!99/0000;1;_'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

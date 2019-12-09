@@ -27,6 +27,8 @@ object FrmVisualizadorRelatorios: TFrmVisualizadorRelatorios
     Font.Name = 'Courier New'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
     TabOrder = 0
   end
 end

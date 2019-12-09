@@ -2,7 +2,7 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
   Left = 192
   Top = 117
   Width = 441
-  Height = 467
+  Height = 480
   Caption = 'Consulta de Horas Extras'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,24 +15,12 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label4: TLabel
-    Left = 96
-    Top = 407
-    Width = 40
-    Height = 13
-    Caption = 'Totais:'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object gbFiltros: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 409
+    Left = 0
+    Top = 0
+    Width = 425
     Height = 81
+    Align = alTop
     Caption = '  Filtros    '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -98,11 +86,11 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
     end
     object btnPesquisar: TSpeedButton
       Left = 328
-      Top = 39
-      Width = 73
+      Top = 37
+      Width = 87
       Height = 22
       Cursor = crHandPoint
-      Caption = '&Listar'
+      Caption = '&Consultar'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -123,7 +111,7 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
       Left = 248
       Top = 40
       Width = 72
-      Height = 22
+      Height = 21
       EditMask = '!99/0000;1;_'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -137,10 +125,11 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
     end
   end
   object dbgHorasExtras: TDBGrid
-    Left = 8
-    Top = 96
-    Width = 409
-    Height = 297
+    Left = 0
+    Top = 81
+    Width = 425
+    Height = 319
+    Align = alClient
     DataSource = dsHorasExtras
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -157,39 +146,60 @@ object FrmConsultaHorasExtras: TFrmConsultaHorasExtras
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = [fsBold]
   end
-  object mskTotalExtra: TMaskEdit
-    Left = 146
-    Top = 398
-    Width = 111
-    Height = 22
-    EditMask = '!990:00;1; '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    MaxLength = 6
-    ParentFont = False
-    ReadOnly = True
+  object PnlBarra: TPanel
+    Left = 0
+    Top = 400
+    Width = 425
+    Height = 41
+    Align = alBottom
     TabOrder = 2
-    Text = '   :  '
-  end
-  object mskTotalAtraso: TMaskEdit
-    Left = 271
-    Top = 398
-    Width = 111
-    Height = 22
-    EditMask = '!990:00;1; '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    MaxLength = 6
-    ParentFont = False
-    ReadOnly = True
-    TabOrder = 3
-    Text = '   :  '
+    object Label4: TLabel
+      Left = 89
+      Top = 13
+      Width = 40
+      Height = 13
+      Caption = 'Totais:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object mskTotalExtra: TMaskEdit
+      Left = 139
+      Top = 4
+      Width = 110
+      Height = 21
+      EditMask = '!990:00;1; '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      MaxLength = 6
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+      Text = '   :  '
+    end
+    object mskTotalAtraso: TMaskEdit
+      Left = 264
+      Top = 4
+      Width = 111
+      Height = 21
+      EditMask = '!990:00;1; '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      MaxLength = 6
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+      Text = '   :  '
+    end
   end
   object dsHorasExtras: TDataSource
     DataSet = cdsHorasExtras

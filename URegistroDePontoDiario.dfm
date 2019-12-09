@@ -152,7 +152,7 @@ object FrmRegistroDePontoDiario: TFrmRegistroDePontoDiario
     Width = 84
     Height = 25
     Cursor = crHandPoint
-    Caption = '&OK'
+    Caption = '&Gravar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11

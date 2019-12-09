@@ -3,7 +3,7 @@ unit UDmPrincipal;
 interface
 
 uses
-  SysUtils, Classes, DB, DBClient, Forms;
+  SysUtils, Classes, DB, DBClient, Forms, MidasLib;
 
 type
   TDmPrincipal = class(TDataModule)

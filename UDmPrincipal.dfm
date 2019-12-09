@@ -7,26 +7,30 @@ object DmPrincipal: TDmPrincipal
   object cdsPontoMensal: TClientDataSet
     Active = True
     Aggregates = <>
-    FileName = 'mesano.xml'
     FieldDefs = <
       item
         Name = 'Dia'
+        Attributes = [faUnNamed]
         DataType = ftDate
       end
       item
         Name = 'Entrada'
+        Attributes = [faUnNamed]
         DataType = ftTime
       end
       item
         Name = 'InicioAlmoco'
+        Attributes = [faUnNamed]
         DataType = ftTime
       end
       item
         Name = 'FimAlmoco'
+        Attributes = [faUnNamed]
         DataType = ftTime
       end
       item
         Name = 'Saida'
+        Attributes = [faUnNamed]
         DataType = ftTime
       end>
     IndexDefs = <>
@@ -37,9 +41,9 @@ object DmPrincipal: TDmPrincipal
     Top = 24
     Data = {
       6B0000009619E0BD0100000018000000050000000000030000006B0003446961
-      040006000000000007456E747261646104000700000000000C496E6963696F41
-      6C6D6F636F04000700000000000946696D416C6D6F636F040007000000000005
-      536169646104000700000000000000}
+      040006001000000007456E747261646104000700100000000C496E6963696F41
+      6C6D6F636F04000700100000000946696D416C6D6F636F040007001000000005
+      536169646104000700100000000000}
     object cdsPontoMensalDia: TDateField
       FieldName = 'Dia'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]

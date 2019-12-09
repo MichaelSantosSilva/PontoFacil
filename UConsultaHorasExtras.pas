@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Mask, DB, DBClient, Grids, DBGrids, Buttons, DBCtrls;
+  Dialogs, StdCtrls, Mask, DB, DBClient, Grids, DBGrids, Buttons, DBCtrls,
+  ExtCtrls;
 
 type
   TFrmConsultaHorasExtras = class(TForm)
@@ -25,9 +26,10 @@ type
     cdsHorasExtrasAtrasosExibicao: TStringField;
     cdsHorasExtrasHorasExtrasAgg: TAggregateField;
     cdsHorasExtrasAtrasosAgg: TAggregateField;
+    btnPesquisar: TSpeedButton;
+    PnlBarra: TPanel;
     mskTotalExtra: TMaskEdit;
     mskTotalAtraso: TMaskEdit;
-    btnPesquisar: TSpeedButton;
     Label4: TLabel;
     procedure FormShow(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
