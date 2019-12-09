@@ -71,6 +71,7 @@ begin
       FRegistroPonto.HoraFimIntervalo := Int(dtpData.Date) + StrToTime(mskFimAlmoco.Text);
       FRegistroPonto.Gravar;
       ShowMessage('Gravado com Sucesso!');
+      dtpData.SetFocus;      
     except
       on E: Exception do
         ShowMessage('Erro ao Gravar: ' + #13#10 + E.message);

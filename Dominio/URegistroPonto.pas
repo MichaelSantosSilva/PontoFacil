@@ -22,7 +22,8 @@ type
   protected
 
   public
-    constructor Create(Data: TDateTime);
+    constructor Create; overload;
+    constructor Create(Data: TDateTime); overload;
     function ObterHoraExtraDiaria: TDateTime;
     function ObterHorasTrabalhadas: TDateTime;
     procedure Gravar;
@@ -55,8 +56,13 @@ end;
 
 constructor TRegistroPonto.Create(Data: TDateTime);
 begin
-  inherited Create;
+  Create;
   CarregarPorData(Data);
+end;
+
+constructor TRegistroPonto.Create;
+begin
+  inherited Create;
 end;
 
 function TRegistroPonto.GetHoraEntrada: TDateTime;
@@ -88,8 +94,14 @@ begin
 end;
 
 function TRegistroPonto.ObterHoraExtraDiaria: TDateTime;
+var
+  Resultado: Double;
 begin
-  Result := ObterHorasTrabalhadas - ObterJornadaDiaria;
+  Resultado := ObterHorasTrabalhadas - ObterJornadaDiaria;
+  // Eliminando frações menores que 1 minuto
+  if (FormatDateTime('HH:MM', Resultado) = FormatDateTime('HH:MM', 0)) then
+    Resultado := 0;
+  Result := Resultado;
 end;
 
 function TRegistroPonto.ObterHorasTrabalhadas: TDateTime;

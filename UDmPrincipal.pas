@@ -49,9 +49,18 @@ begin
   begin
     GravarDataSetPontoMensal(Mes, Ano);
   end;
-  cdsPontoMensal.Close;
-  cdsPontoMensal.LoadFromFile(ObterNomeArquivo(Mes, Ano));
-  cdsPontoMensal.Open;
+  if (cdsPontoMensal.FileName <> ObterNomeArquivo(Mes, Ano)) then
+  begin
+    cdsPontoMensal.Close;
+    cdsPontoMensal.LoadFromFile(ObterNomeArquivo(Mes, Ano));
+    cdsPontoMensal.Open;
+  end
+  else
+  begin
+    cdsPontoMensal.Filtered := False;
+    cdsPontoMensal.Filter := '';
+    cdsPontoMensal.First;
+  end;
 end;
 
 end.

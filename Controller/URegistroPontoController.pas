@@ -2,7 +2,7 @@ unit URegistroPontoController;
 
 interface
 
-uses SysUtils, URegistroPonto, UDmPrincipal, DBClient;
+uses SysUtils, URegistroPonto, UDmPrincipal, DBClient, Contnrs, DB;
 
   type
     TRegistroPontoController = class(TObject)
@@ -21,6 +21,7 @@ uses SysUtils, URegistroPonto, UDmPrincipal, DBClient;
 
     public
       constructor Create;
+      function ObterListaPorReferencia(Mes, Ano: Integer): TObjectList;
       procedure CarregarPorData(Data: TDateTime; RegistroPonto: TRegistroPonto);
       procedure Gravar(RegistroPonto: TRegistroPonto);
     published
@@ -31,7 +32,7 @@ uses SysUtils, URegistroPonto, UDmPrincipal, DBClient;
 implementation
 
 uses
-  DateUtils, DB;
+  DateUtils;
 
 var
   FInstance: TRegistroPontoController;
@@ -144,6 +145,27 @@ end;
 procedure TRegistroPontoController.PreencherHoraSaida(DataHora: TDateTime);
 begin
   DmPrincipal.cdsPontoMensalSaida.AsDateTime := DataHora -  DmPrincipal.cdsPontoMensalDia.AsDateTime;
+end;
+
+function TRegistroPontoController.ObterListaPorReferencia(Mes,
+  Ano: Integer): TObjectList;
+var
+  ListaPonto: TObjectList;
+  Ponto: TRegistroPonto;
+begin
+  DmPrincipal.PrepararDataSetPontoMensal(Mes, Ano);
+  ListaPonto := TObjectList.Create;
+  while (not(DmPrincipal.cdsPontoMensal.Eof)) do
+  begin
+    Ponto := TRegistroPonto.Create;
+    Ponto.HoraEntrada := ObterHoraEntrada;
+    Ponto.HoraInicioIntervalo := ObterHoraInicioAlmoco;
+    Ponto.HoraFimIntervalo := ObterHoraFimAlmoco;
+    Ponto.HoraSaida := ObterHoraSaida;
+    ListaPonto.Add(Ponto);
+    DmPrincipal.cdsPontoMensal.Next;
+  end;
+  Result := ListaPonto;
 end;
 
 Initialization

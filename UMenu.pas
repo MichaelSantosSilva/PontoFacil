@@ -16,6 +16,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnConfiguracoesClick(Sender: TObject);
     procedure btnRegistrarPontoClick(Sender: TObject);
+    procedure btnConsultarHoraExtraClick(Sender: TObject);
+    procedure btnRelatorioDePontoClick(Sender: TObject);
   private
     procedure TratarExibicao;
   public
@@ -29,7 +31,8 @@ implementation
 
 uses
   UUtilidadesIni,
-  UConfiguracao, URegistroDePontoDiario;
+  UConfiguracao, URegistroDePontoDiario, UConsultaHorasExtras,
+  URelatorioPonto;
 
 {$R *.dfm}
 
@@ -69,6 +72,28 @@ begin
   finally
     if(Assigned(FrmRegistroDePontoDiario)) then
       FreeAndNil(FrmRegistroDePontoDiario);
+  end;
+end;
+
+procedure TFrmMenu.btnConsultarHoraExtraClick(Sender: TObject);
+begin
+  try
+    FrmConsultaHorasExtras := TFrmConsultaHorasExtras.Create(Self);
+    FrmConsultaHorasExtras.ShowModal;
+  finally
+    if(Assigned(FrmConsultaHorasExtras)) then
+      FreeAndNil(FrmConsultaHorasExtras);
+  end;
+end;
+
+procedure TFrmMenu.btnRelatorioDePontoClick(Sender: TObject);
+begin
+  try
+    FrmRelatorioPonto := TFrmRelatorioPonto.Create(Self);
+    FrmRelatorioPonto.ShowModal;
+  finally
+    if(Assigned(FrmRelatorioPonto)) then
+      FreeAndNil(FrmRelatorioPonto);
   end;
 end;
 

@@ -74,6 +74,7 @@ object FrmMenu: TFrmMenu
       333337FFFFFFFF77333330000000000333333777777777733333}
     NumGlyphs = 2
     ParentFont = False
+    OnClick = btnConsultarHoraExtraClick
   end
   object btnRelatorioDePonto: TSpeedButton
     Left = 16
@@ -102,6 +103,7 @@ object FrmMenu: TFrmMenu
       0033333337FFFFFF773333333000000003333333377777777333}
     NumGlyphs = 2
     ParentFont = False
+    OnClick = btnRelatorioDePontoClick
   end
   object btnConfiguracoes: TSpeedButton
     Left = 16
